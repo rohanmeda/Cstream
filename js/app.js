@@ -46,18 +46,18 @@ const modal = document.querySelector("#my-modal");
 const videoframe = document.querySelector(".video");
 const convertable = document.getElementById("container");
 var ipaddress;
-fetch("https://cors-anywhere.herokuapp.com/https://l2.io/ip")
+fetch("https://cors-anywhere.herokuapp.comhttp://l2.io/ip")
   .then(resp => resp.text())
   .then(function (data) {
     ipaddress = data;
     console.log(data);
   });
 
-axios(
-  " https://api.odb.to/identity?imdb_id=tt3861390&api_key=78fb2ebed5bacf5d56100d0b4dd77330"
-).then(res => {
-  console.log(res);
-});
+// axios(
+//   " https://api.odb.to/identity?imdb_id=tt3861390&api_key=8vzzxwhvfaf3p0ujt9lpjyl9w2vjmz"
+// ).then(res => {
+//   console.log(res);
+// });
 // GLOBAL CONTROLLER
 const globalContoller = (function () {
   function eventListeners() {
@@ -153,7 +153,7 @@ function getMovie() {
                     <img src="img/time.svg" class="icon"> ${movie.Runtime}
                     </div>
                     <div class="details-rating" title="Internet Movie Database Value">
-                    <img src="img/award.svg" class="icon"> 
+                    <img src="img/award.svg" class="icon">
                     </div>
                     <div class="details-rating" title="Internet Movie Database Value">
                     <img src="img/cinema.svg" class="icon">${movie.Genre}
@@ -210,12 +210,12 @@ function openModal(movieId) {
   modal.style.display = "block";
   // import crawler.js
   fetch(
-      `https://cors-anywhere.herokuapp.com/https://videospider.in/getticket.php?key=Mc7oMWbeOlx9PUH5&secret_key=fq9yh9lupkehclaa5h6ya8hd538hb2&video_id=${movieId}&ip=${ipaddress}`
+      `https://cors-anywhere.herokuapp.com/https://videospider.in/getticket.php?key=tSVKn3f23JxJnQa2&secret_key=8vzzxwhvfaf3p0ujt9lpjyl9w2vjmz&video_id=${movieId}&ip=${ipaddress}`
     )
     .then(resp => resp.text())
     .then(function (data) {
       console.log(data);
-      videoframe.src = `https://videospider.stream/getvideo?key=Mc7oMWbeOlx9PUH5&video_id=${movieId}&ticket=${data}`;
+      videoframe.src = `https://cors-anywhere.herokuapp.com/https://videospider.stream/getvideo?key=tSVKn3f23JxJnQa2&video_id=${movieId}&ticket=${data}`;
     });
 }
 
